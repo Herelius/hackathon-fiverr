@@ -1,7 +1,14 @@
 import './App.css';
+import SelectPage from './assets/SelectPage';
+import PrimarySearchAppBar from './components/navbar';
 
-function App() {
-  return <div className="App">Hello</div>;
-}
+const App = () => {
+  return (
+    <div className="App">
+      <PrimarySearchAppBar />
+      <SelectPage />
+    </div>
+  );
+};
 
 export default App;
