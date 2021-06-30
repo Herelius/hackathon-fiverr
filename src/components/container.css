@@ -4,6 +4,7 @@
   flex-wrap: nowrap;
   background-color: #1dbf73;
   border-radius: 10px;
+  justify-content: center;
 }
 
 .flex-container > div {
