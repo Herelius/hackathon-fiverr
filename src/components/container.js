@@ -26,7 +26,7 @@ export default function SimpleContainer() {
         >
           <div className="flex-container">
             <div className="text">
-              <p>profiles that may interest you:</p>
+              <p>Profiles that may interest you:</p>
             </div>
             <div className="card-container">
               <div className="card">1</div>
