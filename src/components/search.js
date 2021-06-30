@@ -22,14 +22,18 @@ export default function BasicTextFields() {
   const classes = useStyles();
 
   return (
-    <Container className={classes.bckColor} maxWidth="90%" mb="20px">
+    <Container
+      className={classes.bckColor}
+      style={{ marginRight: '20px' }}
+      maxWidth="90%"
+      mb="20px"
+    >
       <form className={classes.root} noValidate autoComplete="off">
         <TextField
           label="Search by tech"
           id="margin-dense"
           className={classes.textField}
           helperText=""
-          margin="dense"
           style={{ paddingBottom: '20px' }}
         />
       </form>
