@@ -3,17 +3,17 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Container } from '@material-ui/core';
-import axios from 'axios';
+// import axios from 'axios';
 // eslint-disable-next-line import/no-duplicates
-import { useEffect, useState } from 'react';
-import API from '../APICLient';
+// import { useEffect, useState } from 'react';
+// import API from '../APICLient';
 
-const { CancelToken } = axios;
+// const { CancelToken } = axios;
 
-const [error, setError] = useState('');
+// const [error, setError] = useState('');
 
 // route
-
+/*
 const useGet = () => {
   const source = CancelToken.source();
   setLoadingMessages(true);
@@ -56,7 +56,7 @@ const handleError = (err) => {
 useEffect(() => {
   useGet();
 }, []);
-
+*/
 // ******************************************************************
 
 const useStyles = makeStyles((theme) => ({
