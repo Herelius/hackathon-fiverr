@@ -1,7 +1,63 @@
+// eslint-disable-next-line import/no-duplicates
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Container } from '@material-ui/core';
+import axios from 'axios';
+// eslint-disable-next-line import/no-duplicates
+import { useEffect, useState } from 'react';
+import API from '../APICLient';
+
+const { CancelToken } = axios;
+
+const [error, setError] = useState('');
+
+// route
+
+const useGet = () => {
+  const source = CancelToken.source();
+  setLoadingMessages(true);
+  API.get('/contact', { cancelToken: source.token })
+    .then((res) => {
+      // setMessages(res.data);
+      setShowMessages(
+        <div>
+          <ul>
+            {res.data.map((msg, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <li key={index} className="message mb-2">
+                {`De ${msg.user} : ${msg.input}`}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    })
+    .catch(handleError)
+    .finally(() => {
+      if (
+        !(
+          source.token.reason &&
+          source.token.reason.message === 'request cancelled'
+        )
+      )
+        setLoadingMessages(false);
+    });
+  return () => {
+    source.cancel('request cancelled');
+  };
+};
+
+const handleError = (err) => {
+  if (!axios.isCancel(err))
+    setError('Something bad happened, sorry for the inconvenience');
+};
+
+useEffect(() => {
+  useGet();
+}, []);
+
+// ******************************************************************
 
 const useStyles = makeStyles((theme) => ({
   root: {
