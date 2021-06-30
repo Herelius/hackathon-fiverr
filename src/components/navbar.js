@@ -13,6 +13,25 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
+/*
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
+*/
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -130,7 +149,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
+        <IconButton aria-label="show 4 new mails" style={{ color: 'black' }}>
           <Badge badgeContent={4} color="secondary">
             <MailIcon />
           </Badge>
@@ -150,7 +169,7 @@ export default function PrimarySearchAppBar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
+          style={{ color: 'black' }}
         >
           <AccountCircle />
         </IconButton>
@@ -162,22 +181,35 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar>
-          <Typography className={classes.title} variant="h4" noWrap>
+        <Toolbar style={{ backgroundColor: 'white' }}>
+          <Typography
+            className={classes.title}
+            style={{ color: 'black' }}
+            variant="h4"
+            noWrap
+          >
             Fiverr
           </Typography>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography
+            className={classes.title}
+            style={{ color: 'black' }}
+            variant="h6"
+            noWrap
+          >
             Mentor
           </Typography>
           <div className={classes.search} />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={4} style={{ color: 'black' }}>
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+            <IconButton
+              aria-label="show 17 new notifications"
+              style={{ color: 'black' }}
+            >
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
@@ -188,7 +220,7 @@ export default function PrimarySearchAppBar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
+              style={{ color: 'black' }}
             >
               <AccountCircle />
             </IconButton>
@@ -199,7 +231,7 @@ export default function PrimarySearchAppBar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              style={{ color: 'black' }}
             >
               <MoreIcon />
             </IconButton>
